@@ -3,7 +3,7 @@
 </p>
 <hr>
 <Br>
-<h1>About Me! 😎</h1>
+<h1>About this repo! 😎</h1>
 
 - 🏫: I'm a grade 9, High School Student.
 - 🔭: I’m currently working on many small ML projects.

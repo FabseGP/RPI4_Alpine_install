@@ -19,5 +19,6 @@
 <Br>
 <h1>A Little Joke at the End! 🤣</h1>
 <Br>
-  
-<img src="https://media.giphy.com/media/aHmquP8GsDCHS/giphy.gif"/>
+
+<p align="center">
+  <img src="https://media.giphy.com/media/aHmquP8GsDCHS/giphy.gif"/>

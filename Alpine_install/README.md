@@ -1,4 +1,4 @@
 # Alpine Raspberry PI
 
-System-installation af Alpine Linux, der tilpasses i de enkelte scripts under "bootstrap"; 
-efter tilpasningen executes make-image for at fremstille et komprimeret image, som kan flashes til SD-kortet
+System-installation of Alpine Linux, which can be customized by editing all scripts under "bootstrap"; 
+after customizing the install, then execute make-image to produce a compressed image

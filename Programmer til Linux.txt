@@ -1,0 +1,73 @@
+﻿Arch-Linux:
+Pacman: 
+sudo pacman -S pdfarranger terminator thermald firefox nautilus geogebra foliate bashtop neovim kicad kicad-library kicad-library-3d openshot arduino wine wine-gecko wine-mono neofetch gthumb flameshot lollypop cheese redshift pulseaudio xf86-input-wacom mpd openssh obs-studio kate links alsa alsa-utils pychess gnome-mahjongg gnome-sudoku kalzium tlp intel-undervolt step lxappearance unrar gnome-calculator zsh-syntax-highlighting bluez bluez-alsa bluetooth-autoconnect bluez-utils pulsemixer zsh zsh-completions zsh-autocomplete cpupower zathura qutebrowser dolphin dolphin-plugins gnome-sound-recorder pulseeffects cups zathura-pdf-poppler pip snapper ark blueman pavucontrol vlc libreoffice sway swaybg swaylock swayidle wayland bastet bitwarden autojump pulseaudio-ctl pulseaudio-modules-bt brightnessctl libreoffice lightdm lightdm-webkit-greeter git ntfs-3g linux-lts linux-zen autofs pulseaudio-ctl waybar fzf bemenu dmenu-wayland qt5-wayland xwayland xorg gammastep wob sway swaybg swaylock swayidle swayshot wl-clipboard wf-recorder alacritty npx nextcloud
+
+
+Yay: 
+yay -S tela-icon-theme, balena-etcher spicetify-cli nordvpn-bin brave-bin zsh-theme-powerlevel10k-git google-meet-desktop sweet-theme-dark grub-theme-tela-git bibata-rainbow-cursor-theme nautilus-admin nautilus-launch qt5-styleplugins mplabx- microchip-mplabx-bin spotify-dev
+
+
+Wine:
+Loggerpro, MPLAB, Chemsketch (Native Maple fra portfolio)
+
+
+
+
+systemctl enable/disable/restart xxx
+
+
+
+
+
+
+Gentoo:
+
+
+sudo emerge —ask pdfarranger terminator thermald firefox nautilus geogebra-bin foliate bashtop neovim kicad kicad-library kicad-library-3d openshot arduino wine wine-gecko wine-mono neofetch gthumb flameshot lollypop cheese redshift pulseaudio xf86-input-wacom mpd openssh obs-studio kate links alsa alsa-plugins pychess gnome-mahjongg gnome-sudoku kalzium tlp intel-undervolt step lxappearance unrar gnome-calculator zsh-syntax-highlighting gentoo-zsh-completions bluez bluez-tools pulsemixer zsh xfce4-power-manager cpupower zathura qutebrowser dolphin dolphin-plugins-git gnome-sound-recorder pulseeffects cups zathura-pdf-poppler pip snapper ark blueman pavucontrol vlc libreoffice sway swaybg swaylock swayidle wayland bastet bitwarden-desktop-bin autojump pulseaudio-ctl pulseaudio-modules-bt spotify brightnessctl nautilus-sendto fzf lightdm lightdm-gtk-greeter autofs qtwayland xwayland xorg-x11 wl-clipboard wf-recorder alacritty swayshot bemenu npx nextcloud nextcloud-client
+
+
+Diverse/manglende:
+tela-icon-theme balena-etcher spicetify-cli nordvpn-bin brave-bin zsh-theme-powerlevel10k google-meet-desktop sweet-theme-dark grub-theme-tela-git bibata-rainbow-cursor-theme nautilus-admin nautilus-launch qt5-styleplugins mplabx- microchip-mplabx-bin brave 
+
+
+Wine:
+Loggerpro, MPLAB, Chemsketch (Native Maple fra portfolio)
+
+
+
+
+rc-update add x default
+rc-update delete x default
+rc-status --servicelist
+rc-update --update
+
+
+Void Linux
+
+
+sudo xbps-install terminator thermald firefox nautilus foliate neovim kicad kicad-library kicad-packages3D openshot arduino wine wine-gecko wine-mono neofetch gthumb lollypop cheese pulseaudio mpd openssh obs kate5 links alsa-utils alsa-firmware alsa-tools  pychess gnome-mahjongg gnome-sudoku tlp intel-undervolt lxappearance unrar gnome-calculator zsh-autosuggestions zsh-syntax-highlighting bluez bluez-alsa pulsemixer zsh cpupower zathura qutebrowser dolphin dolphin-plugins gnome-sound-recorder pulseeffects cups zathura-pdf-poppler python3-pip snapper ark blueman pavucontrol vlc libreoffice sway swaybg swaylock swayidle wayland autojump brightnessctl nautilus-sendto lightdm lightdm-webkit2-greeter autofs kwayland xorg-x11 wl-clipboard wf-recorder alacritty intel-ucode cronie apparmor elogind inux-firmware-intel mesa-dri intel-video-accel kwayland xorg-server-xwayland nautilus-sendto apulse OpenNTPD grim wl-clipboard wf-recorder libbluetooth nextcloud-client-dolphin git curl ffmpeg alsa-plugins-pulseaudio texlive-bin python3-devel cups system-config-printer fzf wlogout bemenu nodejs xtools ncurses-devel breeze-icons nextcloud-client xorg-server-xwayland wlsunset slurp swappy mako imv cargo meson imagewriter
+
+
+Diverse/manglende:
+tela-icon-theme balena-etcher spicetify-cli nordvpn-bin brave-bin zsh-theme-powerlevel10k google-meet-desktop sweet-theme-dark grub-theme-tela-git bibata-rainbow-cursor-theme geogebra pdfarranger bashtop kalzium step pulseaudio-modules-bt pulseaudio-ctl bitwarden bastet
+
+
+XBPS-SRC:
+Spotify, brave
+
+
+Wine:
+Loggerpro, MPLAB, Chemsketch (Native Maple fra portfolio)
+
+
+Opstart:
+NetworkManager, nano,
+
+
+
+
+
+
+sv up/down/restart/status <services>
+ln -s /etc/sv/<service> /var/service/
+rm /var/service/<service>

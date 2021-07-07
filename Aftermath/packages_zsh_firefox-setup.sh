@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # Alle pakker
-apk add neofetch git nautilus libuser docker docker-compose tlp sddm fcron syncthing firefox pipewire pipewire-pulse pavucontrol networkmanager wl-clipboard dbus-openrc gnome-calculator polkit-gnome brightnessctl pipewire-media-session xdg-desktop-portal-kde i3status fzf rclone rsync terminator unrar unzip zsh zsh-autosuggestions zsh-syntax-highlighting neovim gammastep btrfs-progs mousepad ark vlc spectacle htop plasma nodejs npm lsof zathura zathura-pdf-poppler eudev sway swaylock swayidle xf86-video-fbdev mesa-dri-gallium
+apk add neofetch git nautilus libuser docker scrot kdialog docker-compose tlp sddm fcron syncthing firefox pipewire pipewire-pulse pavucontrol networkmanager wl-clipboard dbus-openrc gnome-calculator polkit-gnome brightnessctl pipewire-media-session xdg-desktop-portal-kde i3status fzf rclone rsync terminator unrar unzip zsh zsh-autosuggestions zsh-syntax-highlighting neovim gammastep btrfs-progs mousepad ark vlc spectacle htop plasma nodejs npm lsof zathura zathura-pdf-poppler eudev sway swaylock swayidle xf86-video-fbdev mesa-dri-gallium
 
 # Pipewire
  mkdir /etc/pipewire

@@ -5,11 +5,11 @@
 <Br>
 <h1>About this repo! 😎</h1>
 
-- Installations scripts til opsætning af Alpine Linux for RPI4; swap-space, persistent storage, networking, users and locals
-- Opsætning af pakker + ZSH med PowerLevel10k-tema
-- Gendanner KDE Plasma indstillinger + Sway-config fra backup
-- Installation af FireFox-tema
-- Installation af Docker-containers
+- Scripts for installing Alpine Linux for RPI4, inkluding swap-space, persistent storage, networking, users and locals
+- Installing own list of packages + ZSH with PowerLevel10k-theme
+- Restoring KDE Plasma settings + Sway-config from backup
+- Installing FireFox-theme
+- Installing Docker-containers
   
 
 <Br>

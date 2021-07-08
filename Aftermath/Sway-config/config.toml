@@ -1,0 +1,46 @@
+theme = "solarized-dark"
+icons = "awesome"
+
+[[block]]
+block = "custom"
+command = "cat /etc/hostname"
+interval = "once"
+
+[[block]]
+block = "memory"
+display_type = "memory"
+format_mem = "{mem_total_used_percents}"
+format_swap = "{swap_used_percents}"
+
+[[block]]
+block = "cpu"
+interval = 1
+format = "{barchart} {utilization} {frequency}"
+
+[[block]]
+block = "sound"
+format = "{output_name} {volume}"
+[block.mappings]
+"alsa_output.pci-0000_00_1f.3.analog-stereo" = "🎧"
+
+[[block]]
+block = "backlight"
+device = "intel_backlight"
+step_width=2
+
+[[block]]
+block = "time"
+interval = 60
+format = "%a %d/%m %R"
+
+[[block]]
+block = "battery"
+driver = "upower"
+device="BAT1"
+format = "{percentage}% {time}"
+
+[[block]]
+block = "networkmanager"
+on_click = "alacritty -e nmtui"
+interface_name_exclude = ["br\\-[0-9a-f]{12}", "docker\\d+"]
+interface_name_include = []

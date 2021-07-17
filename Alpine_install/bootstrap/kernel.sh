@@ -1,10 +1,18 @@
-#!/bin/sh
+#!/bin/bash
 
-set -xe
+# Parameters
 
-echo "modules=loop,squashfs,sd-mod,usb-storage root=/dev/mmcblk0p2 rootfstype=ext4 elevator=deadline fsck.repair=yes console=tty1 rootwait quiet" > /boot/cmdline.txt
 
-cat <<EOF > /boot/config.txt
+
+#----------------------------------------------------------------------------------------------------------------------------------
+
+# The fun part
+
+  set -xe
+
+  echo "modules=loop,squashfs,sd-mod,usb-storage root=/dev/mmcblk0p2 rootfstype=ext4 elevator=deadline fsck.repair=yes console=tty1 rootwait quiet" > /boot/cmdline.txt
+
+  cat <<EOF > /boot/config.txt
 [pi4]
 enable_gic=1
 kernel=vmlinuz-rpi4
@@ -17,13 +25,20 @@ gpu_mem=256
 enable_uart=1
 EOF
 
-cat <<EOF > /boot/usercfg.txt
+  cat <<EOF > /boot/usercfg.txt
 EOF
 
-# fstab
-cat <<EOF > /etc/fstab
+#----------------------------------------------------------------------------------------------------------------------------------
+
+# Configuring fstab
+
+  cat <<EOF > /etc/fstab
 /dev/mmcblk0p1  /boot           vfat    defaults          0       2
 /dev/mmcblk0p2  /               ext4    defaults,noatime  0       1
 EOF
 
-apk add linux-rpi4 raspberrypi-bootloader
+#----------------------------------------------------------------------------------------------------------------------------------
+
+# Installing kernel and bootloader
+
+  apk add linux-rpi4 raspberrypi-bootloader

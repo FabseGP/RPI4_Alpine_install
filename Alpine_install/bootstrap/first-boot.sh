@@ -1,14 +1,18 @@
-#!/bin/sh
+#!/bin/bash
 
-# Swap
+# Parameters
 
-SWAP_SPACE=4g
+  SWAP_SPACE=4g
 
-set -xe
+#----------------------------------------------------------------------------------------------------------------------------------
 
-apk add dosfstools e2fsprogs-extra parted
+# The fun part
 
-cat <<EOF > /usr/bin/first-boot
+  set -xe
+
+  apk add dosfstools e2fsprogs-extra parted
+
+  cat <<EOF > /usr/bin/first-boot
 #!/bin/sh
 set -xe
 
@@ -32,7 +36,7 @@ echo "/swapfile       none            swap    sw                0       0" >> /e
 reboot
 EOF
 
-cat <<EOF > /etc/init.d/first-boot
+  cat <<EOF > /etc/init.d/first-boot
 #!/sbin/openrc-run
 command="/usr/bin/first-boot"
 command_background=false
@@ -42,5 +46,5 @@ depend() {
 }
 EOF
 
-chmod +x /etc/init.d/first-boot /usr/bin/first-boot
-rc-update add first-boot
+  chmod +x /etc/init.d/first-boot /usr/bin/first-boot
+  rc-update add first-boot

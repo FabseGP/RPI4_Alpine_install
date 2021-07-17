@@ -1,24 +1,30 @@
-#!/bin/sh
+#!/bin/bash
 
-set -xe
+# Parameters
 
-HOSTNAME="localhost"
+  HOSTNAME="localhost"
 
-apk add wpa_supplicant wireless-tools wireless-regdb iw networkmanager
-sed -i 's/wpa_supplicant_args=\"/wpa_supplicant_args=\" -u -Dwext,nl80211/' /etc/conf.d/wpa_supplicant
+#----------------------------------------------------------------------------------------------------------------------------------
 
-echo -e 'brcmfmac' >> /etc/modules
+# Configuring WiFI and Ethernet
 
-cat <<EOF > /boot/wpa_supplicant.conf
+  set -xe
+
+  apk add wpa_supplicant wireless-tools wireless-regdb iw networkmanager
+  sed -i 's/wpa_supplicant_args=\"/wpa_supplicant_args=\" -u -Dwext,nl80211/' /etc/conf.d/wpa_supplicant
+
+  echo -e 'brcmfmac' >> /etc/modules
+
+  cat <<EOF > /boot/wpa_supplicant.conf
 network={
  ssid="SSID"
  psk="PASSWORD"
 }
 EOF
 
-ln -s /boot/wpa_supplicant.conf /etc/wpa_supplicant/wpa_supplicant.conf
+  ln -s /boot/wpa_supplicant.conf /etc/wpa_supplicant/wpa_supplicant.conf
 
-cat <<EOF > /etc/network/interfaces
+  cat <<EOF > /etc/network/interfaces
 auto lo
 iface lo inet loopback
 
@@ -32,6 +38,9 @@ iface wlan0 inet dhcp
 hostname $HOSTNAME  
 EOF
 
-# bluetooth
-apk add bluez bluez-deprecated
-sed -i '/bcm43xx/s/^#//' /etc/mdev.conf
+#----------------------------------------------------------------------------------------------------------------------------------
+
+# Configuring Bluetooth
+
+  apk add bluez bluez-deprecated
+  sed -i '/bcm43xx/s/^#//' /etc/mdev.conf

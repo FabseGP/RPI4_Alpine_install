@@ -1,14 +1,10 @@
-#!/bin/sh
+#!/bin/bash
 # vim: set ts=4:
 #---help---
 # Usage: alpine-chroot-install [options]
 #
 # This script installs Alpine Linux into a chroot and optionally sets up
 # qemu-user and binfmt to emulate different architecture (e.g. armhf).
-#
-# If qemu-user and binfmt is needed, the script checks if both are available.
-# If not, it tries to install them using apt-get. Beside this the script should
-# work on any Linux system.
 #
 # It also creates script "enter-chroot" inside the chroot directory, that may
 # be used to enter the chroot environment. That script do the following:
@@ -19,10 +15,6 @@
 #   4. switches user and simulates full login using "su -l",
 #   5. loads saved environment variables and changes directory to saved PWD,
 #   6. executes specified command or "sh" if not provided.
-#
-# Example:
-#   sudo alpine-chroot-install -d /alpine -p build-base -p cmake
-#	/alpine/enter-chroot -u $USER ./build
 #
 # Options and environment variables:
 #   -a ARCH                CPU architecture for the chroot. If not set, then it's

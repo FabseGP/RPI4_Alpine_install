@@ -1,20 +1,28 @@
-#!/bin/sh
+#!/bin/bash
 
-set -xe
+# Parameters
 
-FIRST_USER_NAME=rpi
-FIRST_USER_PASS=RPI098765
+  FIRST_USER_NAME=rpi
+  FIRST_USER_PASS=RPI098765
 
-apk add sudo
+#----------------------------------------------------------------------------------------------------------------------------------
 
-for GRP in spi i2c gpio; do
-	addgroup --system $GRP
-done
+# ROOT and regular user
 
-adduser -s /bin/sh -D $FIRST_USER_NAME
+  set -xe
 
-for GRP in adm dialout cdrom audio users video games wheel input tty gpio spi i2c netdev; do
-  adduser $FIRST_USER_NAME $GRP
-done
+  apk add sudo
 
-echo "$FIRST_USER_NAME:$FIRST_USER_PASS" | /usr/sbin/chpasswd
+  for GRP in spi i2c gpio; do
+    addgroup --system $GRP
+  done
+
+  adduser -s /bin/sh -D $FIRST_USER_NAME
+
+  for GRP in adm dialout cdrom audio users video games wheel input tty gpio spi i2c netdev; do
+    adduser $FIRST_USER_NAME $GRP 
+  done
+
+  echo "$FIRST_USER_NAME:$FIRST_USER_PASS" | /usr/sbin/chpasswd
+
+  echo "%wheel ALL=(ALL) ALL" | (EDITOR="tee -a" visudo)

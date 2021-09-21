@@ -1,16 +1,10 @@
 #!/bin/bash
 
-# Parameters
-
-
-
-#----------------------------------------------------------------------------------------------------------------------------------
-
 # The fun part
 
   set -xe
 
-  apk add openssh haveged dbus openntpd
+  apk add openssh haveged dbus
 
   for service in devfs dmesg mdev; do
     rc-update add $service sysinit

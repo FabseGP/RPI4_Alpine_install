@@ -1,16 +1,10 @@
 #!/bin/bash
 
-# Parameters
-
-
-
-#----------------------------------------------------------------------------------------------------------------------------------
-
 # The fun part
 
   set -xe
 
-  echo "modules=loop,squashfs,sd-mod,usb-storage root=/dev/mmcblk0p2 rootfstype=ext4 elevator=deadline fsck.repair=yes console=tty1 rootwait quiet" > /boot/cmdline.txt
+  echo "modules=loop,squashfs,sd-mod,usb-storage,ip_tables root=/dev/sda2 rootfstype=ext4 elevator=deadline fsck.repair=yes console=tty1 rootwait quiet cgroup_enable=cpuset cgroup_memory=1 cgroup_enable=memory" > /boot/cmdline.txt
 
   cat <<EOF > /boot/config.txt
 [pi4]
@@ -33,8 +27,8 @@ EOF
 # Configuring fstab
 
   cat <<EOF > /etc/fstab
-/dev/mmcblk0p1  /boot           vfat    defaults          0       2
-/dev/mmcblk0p2  /               ext4    defaults,noatime  0       1
+/dev/sda1  /boot           vfat    defaults          0       2
+/dev/sda2  /               ext4    defaults,noatime  0       1
 EOF
 
 #----------------------------------------------------------------------------------------------------------------------------------

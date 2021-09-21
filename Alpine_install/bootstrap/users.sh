@@ -19,7 +19,7 @@
 
   adduser -s /bin/sh -D $FIRST_USER_NAME
 
-  for GRP in adm dialout cdrom audio users video games wheel input tty gpio spi i2c netdev; do
+  for GRP in adm dialout cdrom audio users video games wheel input tty gpio spi i2c plugdev netdev; do
     adduser $FIRST_USER_NAME $GRP 
   done
 

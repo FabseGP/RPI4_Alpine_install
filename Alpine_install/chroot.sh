@@ -87,8 +87,7 @@ ALPINE_KEYS='
 '
 
 # Version of alpine-chroot-install script.
-VERSION='0.13.0'
-
+VERSION='0.13.1'
 
 #=======================  F u n c t i o n s  =======================#
 
@@ -262,8 +261,8 @@ while getopts 'a:b:d:i:k:m:p:r:t:hv' OPTION; do
 done
 
 : ${ALPINE_BRANCH:="edge"}
-: ${ALPINE_MIRROR:="https://mirrors.dotsrc.org/alpine/"}
-: ${ALPINE_PACKAGES:="build-base ca-certificates ssl_client"}
+: ${ALPINE_MIRROR:="https://mirrors.dotsrc.org/alpine"}
+: ${ALPINE_PACKAGES:="build-base ca-certificates ssl_client bash"}
 : ${ARCH:=aarch64}
 : ${BIND_DIR:=}
 : ${CHROOT_DIR:="/alpine"}

@@ -10,13 +10,13 @@
 
   set -xe
 
-  apk add dosfstools e2fsprogs-extra parted
+  apk add dosfstools e2fsprogs-extra parted 
 
   cat <<EOF > /usr/bin/first-boot
 #!/bin/sh
 set -xe
 
-cat <<PARTED | sudo parted ---pretend-input-tty /dev/mmcblk0
+cat <<PARTED | sudo parted ---pretend-input-tty /dev/sda
 unit %
 resizepart 2
 Yes
@@ -24,7 +24,7 @@ Yes
 PARTED
 
 partprobe
-resize2fs /dev/mmcblk0p2
+resize2fs /dev/sda2
 rc-update del first-boot
 rm /etc/init.d/first-boot /usr/bin/first-boot
 

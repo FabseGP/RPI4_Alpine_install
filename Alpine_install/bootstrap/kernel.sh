@@ -4,7 +4,7 @@
 
   set -xe
 
-  echo "modules=loop,squashfs,sd-mod,usb-storage,ip_tables root=/dev/sda2 rootfstype=ext4 elevator=deadline fsck.repair=yes console=tty1 rootwait quiet cgroup_enable=cpuset cgroup_memory=1 cgroup_enable=memory" > /boot/cmdline.txt
+  echo "modules=loop,squashfs,sd-mod,usb-storage,ip_tables root=/dev/sda2 rootfstype=ext4 elevator=deadline fsck.repair=yes console=tty1 rootwait quiet cgroup_enable=cpuset cgroup_memory=1 cgroup_enable=memory swapaccount=1" > /boot/cmdline.txt
 
   cat <<EOF > /boot/config.txt
 [pi4]

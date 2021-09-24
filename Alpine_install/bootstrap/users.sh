@@ -11,7 +11,7 @@
 
   set -xe
 
-  apk add sudo
+  apk add sudo git
 
   for GRP in spi i2c gpio; do
     addgroup --system $GRP
